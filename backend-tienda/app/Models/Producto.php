@@ -9,4 +9,13 @@ class Producto extends Model
 {
     //use HasFactory;
     protected $fillable = ['codigoProducto','nombreProducto','cantidad','proveedor'];
+
+
+
+    //Relacion uno a muchos
+public function pedidos(){
+    return $this->hasMany('App\Models\Pedido');
 }
+}
+
+

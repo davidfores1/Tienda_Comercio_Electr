@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::resource('productos', 'App\Http\Controllers\ProductoController');
+Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
