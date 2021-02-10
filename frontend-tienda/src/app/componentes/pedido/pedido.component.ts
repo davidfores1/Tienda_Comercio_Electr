@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedido } from '../pedido';
-import { PedidoService } from '../pedido.service';
+import { Pedido } from './pedido';
+import { PedidoService } from './pedido.service';
 
 @Component({
   selector: 'app-pedido',
@@ -12,6 +12,7 @@ export class PedidoComponent implements OnInit {
   data: Pedido[];
   current_pedi: Pedido;
   operation = { is_new: false, is_visible: false };
+  query:string= '';
 
   constructor(private service: PedidoService) {
 
@@ -19,7 +20,7 @@ export class PedidoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.read().subscribe(res => {
+    this.service.read(this.query).subscribe(res => {
       this.data = res.json();
       this.current_pedi = new Pedido();
     });

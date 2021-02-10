@@ -21,6 +21,6 @@ Route::get('/', function () {
 Route::group(['middleware' => ['cors']], function () {
     Auth::routes();
 Route::resource('productos', 'App\Http\Controllers\ProductoController');
-Route::resource('pedidos', 'App\Http\Controllers\PedidoController');//Rutas a las que se permitirá acceso
+Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
 });
 

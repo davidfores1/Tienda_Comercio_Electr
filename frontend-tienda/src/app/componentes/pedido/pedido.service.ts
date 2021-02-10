@@ -9,8 +9,8 @@ export class PedidoService {
 
   constructor(private http: Http) { }
 
-  read(){
-  return this.http.get('http://127.0.0.1:8000/pedidos');
+  read(query=''){
+  return this.http.get('http://127.0.0.1:8000/pedidos',{params:{buscar:query}});
   }
 
 }

@@ -13,17 +13,13 @@ class PedidoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //return Pedido::all();
-
-         $resultado = Pedido::join("productos", "productos.id", "=", "pedidos.id_producto")
-        ->select("pedidos.numeroPedido","pedidos.id_producto", "productos.nombreProducto","pedidos.cantidad","pedidos.fecha","productos.proveedor")
-        ->get();
-
-        return $resultado;
-
+        return Pedido::search($request->buscar);
+        
     }
+
 
     /**
      * Show the form for creating a new resource.
