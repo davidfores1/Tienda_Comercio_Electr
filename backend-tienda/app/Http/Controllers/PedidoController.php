@@ -15,7 +15,14 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        return Pedido::all();
+        //return Pedido::all();
+
+         $resultado = Pedido::join("productos", "productos.id", "=", "pedidos.id_producto")
+        ->select("pedidos.numeroPedido","pedidos.id_producto", "productos.nombreProducto","pedidos.cantidad","pedidos.fecha","productos.proveedor")
+        ->get();
+
+        return $resultado;
+
     }
 
     /**

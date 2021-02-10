@@ -13,6 +13,6 @@ class Pedido extends Model
 
  //Relacion uno a muchos(Inversa)  
 public function producto(){
-    return $this->belongsTo('App\Models\producto');
+    return $this->hasMany(Producto::class);
 }
 }

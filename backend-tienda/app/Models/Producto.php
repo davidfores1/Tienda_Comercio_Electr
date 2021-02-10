@@ -14,7 +14,7 @@ class Producto extends Model
 
     //Relacion uno a muchos
 public function pedidos(){
-    return $this->hasMany('App\Models\Pedido');
+    return $this->belongsTo(Pedido::class);
 }
 }
 
