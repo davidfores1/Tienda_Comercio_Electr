@@ -9,6 +9,11 @@ import { PedidoComponent } from './componentes/pedido/pedido.component';
 
 const appRoutes:Routes = [{
 
+  path: 'pedido',
+  component: PedidoComponent
+},
+
+{
   path: 'login',
   component: LoginComponent
 },

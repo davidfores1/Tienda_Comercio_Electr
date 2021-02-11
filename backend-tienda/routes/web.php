@@ -22,5 +22,6 @@ Route::group(['middleware' => ['cors']], function () {
     Auth::routes();
 Route::resource('productos', 'App\Http\Controllers\ProductoController');
 Route::resource('pedidos', 'App\Http\Controllers\PedidoController');
+Route::resource('api/login', 'App\Http\Controllers\AuthController');
 });
 

@@ -12,7 +12,7 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { ResponseResetComponent } from './componentes/password/response-reset/response-reset.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RequestResetComponent } from './componentes/password/request-reset/request-reset.component';
-//import { Routes } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
 
 //const routes: Routes = [{ path: 'pedidos', component: PedidoComponent}];
 
@@ -32,7 +32,8 @@ import { RequestResetComponent } from './componentes/password/request-reset/requ
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [PedidoService],
   bootstrap: [AppComponent]
